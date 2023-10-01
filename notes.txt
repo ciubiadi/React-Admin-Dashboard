@@ -1,0 +1,16 @@
+Installation 
+- react
+- material ui
+- Besides the MUI I install the datagrid which is the table of Material UI (it is bundled separately)
+- add icons that Material UI have (this is also separate from the main package)
+- react router 6
+- react pro sidebar
+- formik ( form library )
+- yup ( validation library )
+- Full Calendar ( package library for the calendar app
+- Nivo charts
+
+File and Folder arhitecture - Project Structure :
+- mockGeoFeatures.js is provided because Nivo charts needs it.
+- The code is organized by features ( Duck's pattern )
+- in the global folder I store the global parts of the app
