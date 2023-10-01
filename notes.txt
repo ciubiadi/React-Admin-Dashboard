@@ -1,4 +1,5 @@
 Installation 
+* Prerequisites
 - react
 - material ui
 - Besides the MUI I install the datagrid which is the table of Material UI (it is bundled separately)
@@ -9,8 +10,14 @@ Installation
 - yup ( validation library )
 - Full Calendar ( package library for the calendar app
 - Nivo charts
+* VS Code Extensions
+- Tailwind Shades ( to easily creates shades of colors )
 
 File and Folder arhitecture - Project Structure :
 - mockGeoFeatures.js is provided because Nivo charts needs it.
 - The code is organized by features ( Duck's pattern )
 - in the global folder I store the global parts of the app
+
+Why use the hook useMemo for the theme?
+- The useMemo Hook can be used to keep expensive, resource intensive functions from needlessly running. The useMemo hook returns
+a memoized value, so basically it is caching a value so that it does not need to be recalculated. 
