@@ -47,18 +47,26 @@ const Team = () => {
             field: 'access', 
             headerName: "Access Level",
             flex: 1,
-            // show different content depending on the access
+            // show different content and style depending on the access 
             renderCell: ({ row: { access }}) => {
                 return (
                     <Box 
+                        width="60%"
                         m="0 auto" 
+                        p="5px"
                         display="flex" 
                         justifyContent="center"
+                        backgroundColor={
+                            access === 'admin'
+                                ? colors.greenAccent[600]
+                                : colors.greenAccent[700]
+                        }
+                        borderRadius="4px"
                     >
                         {access === 'admin' && <AdminPanelSettingsOutlinedIcon />}
                         {access === 'manager' && <SecurityOutlinedIcon />}
                         {access === 'user' && <LockOpenOutlinedIcon />}
-                        <Typography>
+                        <Typography color={colors.gray[100]} sx={{ ml: '5px' }}>
                             {access}
                         </Typography>
                     </Box>
@@ -68,9 +76,11 @@ const Team = () => {
     ];
 
     return (
-        <Box>
+        <Box m="20px">
             <Header title="TEAM" subtitle="Managing the Team Members" />
-            <Box 
+            {/* Need to explicitly define an actual pixel height of the Box because it was 100% */}
+            <Box
+                mt="40px" 
                 height="75vh"
             >
                 <DataGrid 
