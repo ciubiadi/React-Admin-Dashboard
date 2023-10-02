@@ -3,9 +3,6 @@ import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { colorTokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
-import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
-import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
 
 const Contacts = () => {
@@ -92,11 +89,15 @@ const Contacts = () => {
                         borderTop: "none",
                         backgroundColor: colors.blueAccent[700]
                     },
+                    "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+                        color: `${colors.gray[100]} !important`
+                    }
                 }}
             >
                 <DataGrid 
                     rows={mockDataContacts}
                     columns={columns}
+                    slots={{ toolbar: GridToolbar}}
                 />
             </Box>
         </Box>
