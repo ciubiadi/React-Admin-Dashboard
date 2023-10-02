@@ -26,4 +26,3 @@ a memoized value, so basically it is caching a value so that it does not need to
 Material UI
 - Box is like div but is very convinient because I can put css properties directly on the Box component ( in comparison with other 
 component like InputButton, on which I need to use sx={{}}
-

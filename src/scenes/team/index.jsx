@@ -82,6 +82,31 @@ const Team = () => {
             <Box
                 mt="40px" 
                 height="75vh"
+                sx={{
+                    // hide borders of the table. Inspect elements and find classes of MuiDataGrid
+                    "& .MuiDataGrid-root": {
+                        border: "none",
+                    },
+                    "& .MuiDataGrid-cell": {
+                        borderBottom: "none"
+                    },
+                    // this class was defined when I configured the columns for the DataGrid
+                    "& .name-column--cell": {
+                        color: colors.greenAccent[300]
+                    },
+                    "& .MuiDataGrid-columnHeaders": {
+                        backgroundColor: colors.blueAccent[700],
+                        borderBottom: "none"
+                    },
+                    // the middle section between header and footer ( the content )
+                    "& .MuiDataGrid-virtualScroller": {
+                        backgroundColor: colors.primary[400]
+                    },
+                    "& .MuiDataGrid-footerContainer": {
+                        borderTop: "none",
+                        backgroundColor: colors.blueAccent[700]
+                    },
+                }}
             >
                 <DataGrid 
                     rows={mockDataTeam}
