@@ -4,7 +4,9 @@ import { Box } from "@mui/material";
 
 const Dashboard = () => {
     return (<Box>
-        <Header title="DASHBOARD" subtitle="Welcome to yourdashboard" />
+        <Box display="flex" justifyContent="space-between" alignItems="center">
+            <Header title="DASHBOARD" subtitle="Welcome to yourdashboard" />
+        </Box>
     </Box>)
 }
 
