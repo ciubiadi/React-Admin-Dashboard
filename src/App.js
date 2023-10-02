@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import Topbar from './scenes/global/Topbar';
 import Sidebar from './scenes/global/Sidebar';
 import Team from './scenes/team';
+import Contacts from './scenes/contacts';
 
 // CssBaseline resets CSS to the defaults and ThemeProvider provides the ability to pass in the themes into material UI.
 
@@ -24,6 +25,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/team" element={<Team />} />
+                <Route path="/contacts" element={<Contacts />} />
               </Routes>
             </main>
           </div>
