@@ -18,7 +18,6 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 // create separate component for menu items to avoid rewriting the same code
 const Item = ({title, to, icon, selected, setSelected}) => {
@@ -96,7 +95,7 @@ const Sidebar = () => {
 
                     {/* USER */}
                     {!isCollapsed && (
-                        <Box>
+                        <Box mb="25px">
                             <Box display="flex" justifyContent="center" alignItems="center">
                                 <img 
                                     alt="profile-user"
@@ -108,7 +107,7 @@ const Sidebar = () => {
                             </Box>
                             
                             <Box textAlign="center">
-                                <Typography variant="h2" color={colors.gray[100]} fontWeight="bold"sx={{ m: '10px 0 0 0'}}>
+                                <Typography variant="h2" color={colors.gray[100]} fontWeight="bold" sx={{ mt: '10px'}}>
                                     Adrian Ciubi
                                 </Typography>
                                 <Typography variant="h5" color={colors.greenAccent[500]}>
