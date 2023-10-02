@@ -12,6 +12,7 @@ Installation
 - Nivo charts
 * VS Code Extensions
 - Tailwind Shades ( to easily creates shades of colors )
+- Pesticide for Chrome
 
 File and Folder arhitecture - Project Structure :
 - mockGeoFeatures.js is provided because Nivo charts needs it.
@@ -21,3 +22,8 @@ File and Folder arhitecture - Project Structure :
 Why use the hook useMemo for the theme?
 - The useMemo Hook can be used to keep expensive, resource intensive functions from needlessly running. The useMemo hook returns
 a memoized value, so basically it is caching a value so that it does not need to be recalculated. 
+
+Material UI
+- Box is like div but is very convinient because I can put css properties directly on the Box component ( in comparison with other 
+component like InputButton, on which I need to use sx={{}}
+
