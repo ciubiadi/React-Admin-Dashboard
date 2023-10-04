@@ -11,6 +11,7 @@ import Contacts from './scenes/contacts';
 import Invoices from './scenes/invoices';
 import Profile from './scenes/profile';
 import Calendar from './scenes/calendar';
+import FAQ from './scenes/faq';
 
 // CssBaseline resets CSS to the defaults and ThemeProvider provides the ability to pass in the themes into material UI.
 
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/invoices" element={<Invoices />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/calendar" element={<Calendar />} />
+                <Route path="/faq" element={<FAQ />} />
               </Routes>
             </main>
           </div>
