@@ -11,6 +11,11 @@ const Calendar = () => {
 
   const [currentEvents, setCurrentEvents] = useState([]);
 
+  const handleDateClick = (selected) => {
+    console.log('selected');
+    console.log(selected);
+  };
+
   return (
     <Box m="20px">
       <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
@@ -28,6 +33,18 @@ const Calendar = () => {
           right: 'dayGridMonth, timeGridWeek, timeGridDay, listMonth',
         }}
         initialView="dayGridMonth"
+        editable={true}
+        selectable={true}
+        selectMiror={true}
+        dayMaxEvents={true}
+        select={handleDateClick}
+        initialEvents={[
+          {
+            id:'1',
+            title:'Some Event',
+            date:'2023-10-14'
+          }
+        ]}
       />
     </Box>
   )
