@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import Header from "../../components/Header";
@@ -19,15 +19,100 @@ const Profile = () => {
         initialValues={initialValues}
         validationSchema={checkoutSchema}
       >
-        
+        {({
+          values,
+          errors,
+          touched,
+          handleBlur,
+          handleChange,
+          handleSubmit,
+        }) => (
+            <form onSubmit={handleSubmit}>
+                <Box>
+                    <TextField 
+                        fullWidth
+                        variant="filled"
+                        type="text"
+                        label="First Name"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={values.firstName}
+                        name="firstName"
+                        error={!!touched.firstName && !!errors.firstName}
+                        helperText={touched.firstName && errors.firstName}
+                    />
+                    <TextField 
+                        fullWidth
+                        variant="filled"
+                        type="text"
+                        label="Last Name"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={values.lastName}
+                        name="lastName"
+                        error={!!touched.lastName && !!errors.lastName}
+                        helperText={touched.lastName && errors.lastName}
+                    />
+                    <TextField 
+                        fullWidth
+                        variant="filled"
+                        type="text"
+                        label="Email"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={values.email}
+                        name="email"
+                        error={!!touched.email && !!errors.email}
+                        helperText={touched.email && errors.email}
+                    />
+                    <TextField 
+                        fullWidth
+                        variant="filled"
+                        type="text"
+                        label="Contact Number"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={values.contact}
+                        name="contact"
+                        error={!!touched.contact && !!errors.contact}
+                        helperText={touched.contact && errors.contact}
+                    />
+                    <TextField 
+                        fullWidth
+                        variant="filled"
+                        type="text"
+                        label="Address 1"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={values.address1}
+                        name="address1"
+                        error={!!touched.address1 && !!errors.address1}
+                        helperText={touched.address1 && errors.address1}
+                    />
+                    <TextField 
+                        fullWidth
+                        variant="filled"
+                        type="text"
+                        label="Address 2"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={values.address2}
+                        name="address2"
+                        error={!!touched.address2 && !!errors.address2}
+                        helperText={touched.address2 && errors.address2}
+                    />
+                </Box>
+            </form>
+        )}
       </Formik>
     </Box>
   );
 };
-
+// phone input validation with regex taken from StackOverflow
 const phoneRegExp =
   /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
 
+  // this schema defines the validation logic for each used field. Yup provides premade validation functions
 const checkoutSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
