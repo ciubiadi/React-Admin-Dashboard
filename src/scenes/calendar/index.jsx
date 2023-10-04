@@ -14,6 +14,18 @@ const Calendar = () => {
   const handleDateClick = (selected) => {
     console.log('selected');
     console.log(selected);
+    const eventTitle = prompt("Please enter a new title for your event");
+    const calendarApi = selected.view.calendar;
+
+    if (eventTitle) {
+      calendarApi.addEvent({
+        id: `${selected.dateStr}-${eventTitle}`,
+        title: eventTitle,
+        start: selected.startStr,
+        end: selected.endStr,
+        allDay: selected.allDay,
+      });
+    }
   };
 
   return (
@@ -38,6 +50,9 @@ const Calendar = () => {
         selectMiror={true}
         dayMaxEvents={true}
         select={handleDateClick}
+        eventsSet={(events => {
+          console.log('Events set: ', events);
+        })}
         initialEvents={[
           {
             id:'1',
