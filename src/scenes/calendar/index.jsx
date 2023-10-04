@@ -17,6 +17,7 @@ const Calendar = () => {
     const eventTitle = prompt("Please enter a new title for your event");
     const calendarApi = selected.view.calendar;
 
+    // if user entered a Title for the new event add it in the calendar events
     if (eventTitle) {
       calendarApi.addEvent({
         id: `${selected.dateStr}-${eventTitle}`,
@@ -25,6 +26,20 @@ const Calendar = () => {
         end: selected.endStr,
         allDay: selected.allDay,
       });
+    }
+
+    calendarApi.unselect();
+  };
+
+  const handleEventRemovalClick = (selected) => {
+    console.log('selected event remove');
+    console.log(selected);
+    if (
+      window.confirm(
+        `Are you sure you want to delete the event '${selected.event.title}'`
+      )
+    ) {
+      selected.event.remove();
     }
   };
 
@@ -50,6 +65,7 @@ const Calendar = () => {
         selectMiror={true}
         dayMaxEvents={true}
         select={handleDateClick}
+        eventClick={handleEventRemovalClick}
         eventsSet={(events => {
           console.log('Events set: ', events);
         })}
