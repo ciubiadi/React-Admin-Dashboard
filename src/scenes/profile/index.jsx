@@ -3,12 +3,15 @@ import { Box, TextField } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import Header from "../../components/Header";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Profile = () => {
+    // if I have a min width of 600px I trigger the booleanisNonMobile;
+    const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  const handleFormSubmit = (values) => {
-    console.log(values);
-  };
+    const handleFormSubmit = (values) => {
+        console.log(values);
+    };
 
   return (
     <Box m="20px">
@@ -28,7 +31,14 @@ const Profile = () => {
           handleSubmit,
         }) => (
             <form onSubmit={handleSubmit}>
-                <Box>
+                <Box
+                    display="grid"
+                    gap="30px"
+                    gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+                    sx={{
+                    "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
+                    }}
+                >
                     <TextField 
                         fullWidth
                         variant="filled"
