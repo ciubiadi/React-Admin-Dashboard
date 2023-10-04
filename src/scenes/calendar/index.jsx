@@ -61,7 +61,14 @@ const Calendar = () => {
           <Typography variant="h5">Events</Typography>
           <List>
             {currentEvents.map((event) => (
-              <ListItem>
+              <ListItem
+                key={event.id}
+                sx={{
+                  backgroundColor: colors.greenAccent[500],
+                  margin: "10px 0",
+                  borderRadius: '4px'
+                }}
+              >
                 <ListItemText
                   primary={event.title} 
                 />
@@ -101,7 +108,13 @@ const Calendar = () => {
                 id:'1',
                 title:'Some Event',
                 date:'2023-10-14'
-              }
+              },
+              {
+                id:'2',
+                title:'interview',
+                date:'2023-10-04'
+              },
+              
             ]}
           />
         </Box>
