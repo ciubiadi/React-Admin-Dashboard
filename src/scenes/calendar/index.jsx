@@ -8,6 +8,7 @@ import Header from '../../components/Header'
 import { Box, List, ListItem, ListItemText, Typography } from '@mui/material'
 import { useTheme } from '@emotion/react';
 import { colorTokens } from '../../theme';
+import { formatDate } from '@fullcalendar/core';
 
 const Calendar = () => {
   const [currentEvents, setCurrentEvents] = useState([]);
@@ -50,7 +51,7 @@ const Calendar = () => {
     <Box m="20px">
       <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
 
-      <Box display="flex" justifyContent="space-between">
+      <Box mt="5px" display="flex" justifyContent="space-between">
         {/* CALENDAR SIDEBAR */}
         <Box 
           flex="1 1 30%"
@@ -73,7 +74,11 @@ const Calendar = () => {
                   primary={event.title}
                   secondary={
                     <Typography>
-                      {event.id}        
+                      {formatDate(event.start, {
+                        year:'numeric',
+                        month:'short',
+                        day:'numeric'
+                      })}      
                     </Typography>
                   } 
                 />
@@ -119,7 +124,6 @@ const Calendar = () => {
                 title:'interview',
                 date:'2023-10-04'
               },
-              
             ]}
           />
         </Box>
