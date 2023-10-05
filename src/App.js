@@ -13,6 +13,7 @@ import Profile from './scenes/profile';
 import Calendar from './scenes/calendar';
 import FAQ from './scenes/faq';
 import Bar from './scenes/bar-chart';
+import Pie from './scenes/pie-chart';
 
 // CssBaseline resets CSS to the defaults and ThemeProvider provides the ability to pass in the themes into material UI.
 
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/bar" element={<Bar />} />
+                <Route path="/pie" element={<Pie />} />
               </Routes>
             </main>
           </div>
