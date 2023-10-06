@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import React from "react";
 import { mockLineData as data } from "../data/mockData";
 import { ResponsiveLine } from "@nivo/line";
