@@ -2,10 +2,11 @@ import React from "react";
 import { mockLineData as data } from "../data/mockData";
 import { ResponsiveLine } from "@nivo/line";
 
-const LineChart = () => {
+const LineChart = ( {isDashboard = false} ) => {
     return (
         <ResponsiveLine
             data={data}
+            colors={isDashboard ? {datum: 'color'} : { scheme: 'nivo'}}
             margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
             xScale={{ type: 'point' }}
             yScale={{
@@ -22,7 +23,7 @@ const LineChart = () => {
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: 'transportation',
+                legend: isDashboard ? undefined : 'transportation',
                 legendOffset: 36,
                 legendPosition: 'middle'
             }}
@@ -30,7 +31,7 @@ const LineChart = () => {
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: 'count',
+                legend: isDashboard ? undefined : 'count',
                 legendOffset: -40,
                 legendPosition: 'middle'
             }}

@@ -5,7 +5,7 @@ import { mockBarData as data } from '../data/mockData';
 import { useTheme } from "@mui/material";
 import { colorTokens } from '../theme';
 
-const BarChart = () => {
+const BarChart = ( { isDashboard = false } ) => {
     const theme = useTheme();
     const colors = colorTokens(theme.palette.mode);
 
@@ -17,21 +17,21 @@ const BarChart = () => {
                 axis: {
                 domain: {
                     line: {
-                    stroke: colors.gray[100],
+                        stroke: colors.gray[100],
                     },
                 },
                 legend: {
                     text: {
-                    fill: colors.gray[100],
+                        fill: colors.gray[100],
                     },
                 },
                 ticks: {
                     line: {
-                    stroke: colors.gray[100],
-                    strokeWidth: 1,
+                        stroke: colors.gray[100],
+                        strokeWidth: 1,
                     },
                     text: {
-                    fill: colors.gray[100],
+                        fill: colors.gray[100],
                     },
                 },
                 },
@@ -104,7 +104,7 @@ const BarChart = () => {
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: 'country',
+                legend: isDashboard ? undefined : 'country',
                 legendPosition: 'middle',
                 legendOffset: 32
             }}
@@ -112,7 +112,7 @@ const BarChart = () => {
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: 'food',
+                legend: isDashboard ? undefined : 'food',
                 legendPosition: 'middle',
                 legendOffset: -40
             }}
