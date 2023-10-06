@@ -1,10 +1,11 @@
 import React from "react";
 import Header from "../../components/Header";
 import { Box, Button } from "@mui/material";
-import { DownloadOutlined } from "@mui/icons-material";
+import { DownloadOutlined, PersonAddOutlined, PointOfSaleOutlined, TrafficOutlined } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
 import { colorTokens } from "../../theme";
-import ProgressCircle from "../../components/ProgressCircle";
+import StatsBox from "../../components/StatsBox";
+import { EmailOutlined } from "@mui/icons-material";
 
 const Dashboard = () => {
     const theme = useTheme();
@@ -37,26 +38,70 @@ const Dashboard = () => {
                 <Box
                     gridColumn="span 3"
                     backgroundColor={colors.primary[500]}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
                 >
-                    <ProgressCircle />
+                    <StatsBox 
+                        title="12,361"
+                        subtitle="Emails Sent"
+                        progress="0.75"
+                        increase="+14k"
+                        icon={
+                            <EmailOutlined />
+                        }
+                    />
                 </Box>
                 <Box
                     gridColumn="span 3"
                     backgroundColor={colors.primary[500]}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
                 >
-                    <ProgressCircle />
+                    <StatsBox 
+                        title="12,361"
+                        subtitle="Emails Sent"
+                        progress="0.75"
+                        increase="+14k"
+                        icon={
+                            <PointOfSaleOutlined />
+                        }
+                    />
                 </Box>
                 <Box
                     gridColumn="span 3"
                     backgroundColor={colors.primary[500]}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
                 >
-                    <ProgressCircle />
+                    <StatsBox 
+                        title="12,361"
+                        subtitle="Emails Sent"
+                        progress="0.75"
+                        increase="+14k"
+                        icon={
+                            <PersonAddOutlined />
+                        }
+                    />
                 </Box>
                 <Box
                     gridColumn="span 3"
                     backgroundColor={colors.primary[500]}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
                 >
-                    <ProgressCircle />
+                    <StatsBox 
+                        title="12,361"
+                        subtitle="Emails Sent"
+                        progress="0.75"
+                        increase="+14k"
+                        icon={
+                            <TrafficOutlined />
+                        }
+                    />
                 </Box>
             </Box>
         </Box>
