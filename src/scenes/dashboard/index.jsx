@@ -37,7 +37,7 @@ const Dashboard = () => {
                 {/* ROW 1 with statuses */}
                 <Box
                     gridColumn="span 3"
-                    backgroundColor={colors.primary[500]}
+                    backgroundColor={colors.primary[400]}
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
@@ -48,58 +48,66 @@ const Dashboard = () => {
                         progress="0.75"
                         increase="+14k"
                         icon={
-                            <EmailOutlined />
+                            <EmailOutlined sx={{
+                                color: colors.greenAccent[600], fontSize: "25px"
+                            }}/>
                         }
                     />
                 </Box>
                 <Box
                     gridColumn="span 3"
-                    backgroundColor={colors.primary[500]}
+                    backgroundColor={colors.primary[400]}
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
                 >
                     <StatsBox 
-                        title="12,361"
-                        subtitle="Emails Sent"
-                        progress="0.75"
-                        increase="+14k"
+                        title="431,225"
+                        subtitle="Sales Obtained"
+                        progress="0.50"
+                        increase="+21%"
                         icon={
-                            <PointOfSaleOutlined />
+                            <PointOfSaleOutlined sx={{
+                                color: colors.greenAccent[600], fontSize: "25px"
+                            }}/>
                         }
                     />
                 </Box>
                 <Box
                     gridColumn="span 3"
-                    backgroundColor={colors.primary[500]}
+                    backgroundColor={colors.primary[400]}
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
                 >
                     <StatsBox 
-                        title="12,361"
-                        subtitle="Emails Sent"
-                        progress="0.75"
-                        increase="+14k"
+                        title="32,441"
+                        subtitle="Max Clients"
+                        progress="0.30"
+                        increase="+5%"
                         icon={
-                            <PersonAddOutlined />
+                            <PersonAddOutlined sx={{
+                                color: colors.greenAccent[600], fontSize: "25px"
+                            }}/>
                         }
                     />
                 </Box>
                 <Box
                     gridColumn="span 3"
-                    backgroundColor={colors.primary[500]}
+                    backgroundColor={colors.primary[400]}
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
                 >
                     <StatsBox 
-                        title="12,361"
-                        subtitle="Emails Sent"
-                        progress="0.75"
-                        increase="+14k"
+                        title="1,325,134"
+                        subtitle="Traffic Received"
+                        progress="0.80"
+                        increase="+43%"
                         icon={
-                            <TrafficOutlined />
+                            <TrafficOutlined sx={{
+                                color: colors.greenAccent[600], fontSize: "25px"
+                            }}/>
                         }
                     />
                 </Box>
