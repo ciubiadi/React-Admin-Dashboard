@@ -4,6 +4,7 @@ import { Box, Button } from "@mui/material";
 import { DownloadOutlined } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
 import { colorTokens } from "../../theme";
+import ProgressCircle from "../../components/ProgressCircle";
 
 const Dashboard = () => {
     const theme = useTheme();
@@ -22,6 +23,40 @@ const Dashboard = () => {
                         <DownloadOutlined />
                         Download Reports
                     </Button>
+                </Box>
+            </Box>
+            
+            {/*  GRID AND CHARTS */}
+            <Box
+                display="grid"
+                gridTemplateColumns="repeat(12, 1fr)"
+                gridAutoRows="140px"
+                gap="20px"
+            >
+                {/* ROW 1 with statuses */}
+                <Box
+                    gridColumn="span 3"
+                    backgroundColor={colors.primary[500]}
+                >
+                    <ProgressCircle />
+                </Box>
+                <Box
+                    gridColumn="span 3"
+                    backgroundColor={colors.primary[500]}
+                >
+                    <ProgressCircle />
+                </Box>
+                <Box
+                    gridColumn="span 3"
+                    backgroundColor={colors.primary[500]}
+                >
+                    <ProgressCircle />
+                </Box>
+                <Box
+                    gridColumn="span 3"
+                    backgroundColor={colors.primary[500]}
+                >
+                    <ProgressCircle />
                 </Box>
             </Box>
         </Box>
